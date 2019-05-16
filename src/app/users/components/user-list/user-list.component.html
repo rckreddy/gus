@@ -1,0 +1,10 @@
+<mat-card *ngFor="let user of users" (click)="onUserSelect(user)">
+  <mat-card-title-group>
+    <img mat-card-sm-image src="{{user.avatar_url}}"/>
+    <mat-card-title>{{ user.login }}</mat-card-title>
+    <mat-card-subtitle>{{ user.id }}</mat-card-subtitle>
+  </mat-card-title-group>
+  <mat-card-content>
+    <p>Score: {{ user.score }}</p>
+  </mat-card-content>
+</mat-card>

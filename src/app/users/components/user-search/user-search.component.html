@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-title>User Search</mat-card-title>
+  <mat-card-content>
+    <mat-form-field>
+      <input matInput placeholder="Search for a user" [value]="userSearch.query" (keyup)="search.emit($event.target.value)">
+    </mat-form-field>
+    <mat-spinner [class.show]="searching" [diameter]="30" [strokeWidth]="3"></mat-spinner>
+  </mat-card-content>
+  <mat-card-footer>
+    <mat-paginator *ngIf="length > 0"
+      [length]="length"
+      [pageSize]="pageSize"
+      (page)="onPage($event)">
+    </mat-paginator>
+  </mat-card-footer>
+</mat-card>

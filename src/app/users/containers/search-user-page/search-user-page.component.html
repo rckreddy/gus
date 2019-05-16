@@ -1,0 +1,11 @@
+<gus-user-search 
+      [userSearch]="userSearch$ | async"
+      [searching]="loading$ | async"
+      [totalCount]="totalCount$ | async"
+      (search)="onSearch($event)"
+      (page)="onPage($event)">
+</gus-user-search>
+<gus-user-list
+      [users]="users$ | async"
+      (selectUser)="onUserSelect($event)">
+</gus-user-list>
